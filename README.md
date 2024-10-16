@@ -5,6 +5,7 @@ This repository contains Python code for calculating and visualizing the **mode 
 - **Clamped-Free (Cantilever Beam)**
 - **Clamped-Clamped (Both Ends Fixed Beam)**
 - **Simply-Supported (Pinned-Pinned Beam)**
+- **Tapered Beams (Clamped-Free and Clamped-Clamped)**
 
 The code uses numerical methods to solve the characteristic equations associated with each type of beam configuration, then plots the corresponding mode shapes and calculates the natural frequencies.
 
@@ -59,6 +60,25 @@ The code primarily relies on:
 
 3. **Exporting Results**:
    - The calculated mode shapes are saved to an Excel file (`simply_supported_beam_modes.xlsx`) for further analysis. You can modify the file name and add export functionality for other beam configurations if needed.
+
+### Tapered Beam Analysis
+
+Tapered beams exhibit changes in cross-sectional dimensions along their length, which significantly affects their stiffness, mass distribution, and vibrational characteristics. The code incorporates the following key aspects for analyzing tapered beams:
+
+1. **Geometry and Material Properties**:
+   - The beam dimensions (initial and final breadth and thickness) and material properties (modulus of elasticity and density) are defined to facilitate the analysis.
+
+2. **Element Formulation**:
+   - The beam is divided into smaller elements and properties such as the area moment of inertia and cross-sectional area are calculated for each element, taking tapering into account.
+
+3. **Global Stiffness and Mass Matrices**:
+   - Stiffness and mass matrices for each element are computed and assembled into global matrices representing the entire beam.
+     
+4. **Natural Frequency and Mode Shape Calculations**:
+   - Eigenvalue analysis is performed to derive natural frequencies and mode shapes, which are essential for understanding the beam's dynamic behavior.
+
+5. **Visualization**:
+   - The normalized mode shapes for the tapered beams are plotted, providing a clear representation of their deflection patterns.
 
 ### Code Example
 
